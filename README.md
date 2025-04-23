@@ -1,0 +1,2 @@
+# argocd-pg
+ArgoCD playground
