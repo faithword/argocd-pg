@@ -12,6 +12,10 @@ jobs:
   terraform:
     name: Apply Terraform
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./infrastructure/manifests
 
     steps:
       - name: Checkout Code
@@ -34,7 +38,3 @@ jobs:
 
       - name: Terraform Plan
         run: terraform plan
-
-      - name: Terraform Apply
-        if: github.ref == 'refs/heads/main'
-        run: terraform apply -auto-approve
